@@ -1,4 +1,4 @@
-Data Structure We Chose To Implement: Map
+#Data Structure We Chose To Implement: Map
 
 map.h contains the classes Map, SOMap, and SSMap.
 
