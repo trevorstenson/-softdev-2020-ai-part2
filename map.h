@@ -3,7 +3,7 @@
 #include "list.h"
 
 /**
- * Map - data structure that is to be used for our project
+ * Map - data structure that is to be used for our project which maps an Object to an Object
  */ 
 class Map: public Object {
     public:
