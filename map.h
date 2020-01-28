@@ -147,6 +147,25 @@ class Map: public Object {
 };
 
 /**
+ * @brief OSMap - Map from Object to String
+ * 
+ */
+class OSMap : public Map {
+    public:
+        /**
+         * @brief - Put the given key-value pair in this map.
+         * Validate that the value is of type String.
+         * 
+         * @param key - the key to insert
+         * @param value - the value to insert
+         * @return Object* - the previous value for the given key
+         */
+        virtual Object* put(Object* key, Object* value) {
+                
+        }
+};
+
+/**
  * @brief SOMap - Map from String to Object
  * 
  */
