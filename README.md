@@ -10,17 +10,3 @@ SOMap inherits from Map and stands for String-Object Map, which means that it st
 
 ### SSMap:
 SSMap inherits from SOMap and stands for String-String Map, which means that it stores both its keys and values as type String. This means that when a put operation is called, the method should return an error if the key passed in is not a String. Also, when the get operation is called, the return value should be able to be cast to a String.
-
-
-# Other Classes:
-
-## object.h contains the class Object.
-### Object:
-Object is what every other class inherits from. Its methods include equals, which checks whether another Object is equal to it, and hash, which represents itself as a type size_t.
-
-## list.h contains the classes List and StrList.
-## List:
-List inherits from Object, which means it overrides equals and hash. In addition, it provides functionality for adding elements of type Object. The main difference between this class and Map is that accessing elements must be done by an size_t index, not a custom key. In addition, the List is ordered by the index, while the Map (when getting the keys and values) is not meant to be ordered.
-
-## StrList:
-StrList inherits from List and requires that the elements stored are of type String. This means that when adding elements, it will throw an error if the elements are not of type String. In addition, this means that when this StrList returns elements, they will be able to be cast to a String.
