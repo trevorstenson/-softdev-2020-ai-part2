@@ -7,6 +7,16 @@
  */ 
 class Map: public Object {
     public:
+        /**
+         * @brief Basic initialization of an empty Map
+         */
+        Map();
+
+        /**
+         * @brief Deletes a Map including all private data structures, such as buckets
+         * NOTE: Objects inside the Map will NOT be freed
+         */
+        ~Map();
 
         /**
          * @brief - Get the size of this map.
