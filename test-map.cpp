@@ -33,7 +33,7 @@ void testBasicSOMap () {
     t_true(b->equals(map->get(bKey)));
     t_true(a->equals(map->remove(aKey)));
     t_true(map->size() == 1);
-    t_true(a->equals(map->remove(aKey)));
+    t_true(a->equals(map->remove(bKey)));
     t_true(map->size() == 0);
     t_true(map->isEmpty());
     map->put(aKey, a);
@@ -94,7 +94,7 @@ void testBasicSSMap () {
     t_true(b->equals(map->get(bKey)));
     t_true(a->equals(map->remove(aKey)));
     t_true(map->size == 1);
-    t_true(a->equals(map->remove(aKey)));
+    t_true(a->equals(map->remove(bKey)));
     t_true(map->size == 0);
     t_true(map->isEmpty());
     map->put(aKey, a);
