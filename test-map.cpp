@@ -33,7 +33,7 @@ void testBasicSOMap () {
     t_true(b->equals(map->get(bKey)));
     t_true(a->equals(map->remove(aKey)));
     t_true(map->size() == 1);
-    t_true(a->equals(map->remove(bKey)));
+    t_true(b->equals(map->remove(bKey)));
     t_true(map->size() == 0);
     t_true(map->isEmpty());
     map->put(aKey, a);
@@ -49,8 +49,8 @@ void testBasicSOMap () {
     Object* d = new Object();
     String* cKey = new String("c");
     String* dKey = new String("d");
-    map2.put(cKey, c);
-    map2.put(dKey, d);
+    map2->put(cKey, c);
+    map2->put(dKey, d);
     t_false(map->equals(map2));
     map->putAll(map2);
     t_true(map->size() == 4);
@@ -96,7 +96,7 @@ void testBasicSSMap () {
     t_true(b->equals(map->get(bKey)));
     t_true(a->equals(map->remove(aKey)));
     t_true(map->size() == 1);
-    t_true(a->equals(map->remove(bKey)));
+    t_true(b->equals(map->remove(bKey)));
     t_true(map->size() == 0);
     t_true(map->isEmpty());
     map->put(aKey, a);
@@ -112,8 +112,8 @@ void testBasicSSMap () {
     String* d = new String("dValue");
     String* cKey = new String("c");
     String* dKey = new String("d");
-    map2.put(cKey, c);
-    map2.put(dKey, d);
+    map2->put(cKey, c);
+    map2->put(dKey, d);
     t_false(map->equals(map2));
     map->putAll(map2);
     t_true(map->size() == 4);
