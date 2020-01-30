@@ -61,6 +61,7 @@ class Map: public Object {
 
         /**
          * @brief - Get the value for the key.
+         * If the key does not exist, return a nullptr.
          * 
          * @param key - the key to return the value for.
          * @return Object* - the value that corresponds to key
@@ -74,7 +75,7 @@ class Map: public Object {
          * 
          * @param key - the key to insert
          * @param value - the value to insert
-         * @return Object* - the previous value for the given key
+         * @return Object* - the previous value for the given key if exists, else nullptr
          */
         virtual Object* put(Object* key, Object* value) {
             
@@ -84,7 +85,7 @@ class Map: public Object {
          * @brief - Remove the key-value pair from this map.
          * 
          * @param key - the key to remove
-         * @return Object* - the value of the key that was removed
+         * @return Object* - the value of the key that was removed if exists, else nullptr
          */
         virtual Object* remove(Object* key) {
 
@@ -158,7 +159,7 @@ class OSMap : public Map {
          * 
          * @param key - the key to insert
          * @param value - the value to insert
-         * @return Object* - the previous value for the given key
+         * @return Object* - the previous value for the given key if exists, else nullptr
          */
         virtual Object* put(Object* key, Object* value) {
                 
@@ -177,7 +178,7 @@ class SOMap : public Map {
          * 
          * @param key - the key to insert
          * @param value - the value to insert
-         * @return Object* - the previous value for the given key
+         * @return Object* - the previous value for the given key if exists, else nullptr
          */
         virtual Object* put(Object* key, Object* value) {
                 
@@ -196,7 +197,7 @@ class SSMap : public SOMap {
          * 
          * @param key - the key to insert
          * @param value - the value to insert
-         * @return Object* - the previous value for the given key
+         * @return Object* - the previous value for the given key if exists, else nullptr
          */
         virtual Object* put(Object* key, Object* value) {
             
