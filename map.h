@@ -73,7 +73,7 @@ class Map: public Object {
         /**
          * @brief - Put the given key-value pair in this map.
          * 
-         * @param key - the key to insert
+         * @param key - the key to insert, cannot be null
          * @param value - the value to insert
          * @return Object* - the previous value for the given key if exists, else nullptr
          */
@@ -168,7 +168,7 @@ class OSMap : public Map {
         /**
          * @brief - Put the given key-value pair in this map.
          * 
-         * @param key - the key to insert
+         * @param key - the key to insert, cannot be null
          * @param value - the value to insert
          * @return String* - the previous value for the given key if exists, else nullptr
          */
@@ -219,7 +219,7 @@ class SOMap : public Map {
         /**
          * @brief - Put the given key-value pair in this map.
          * 
-         * @param key - the key to insert
+         * @param key - the key to insert, cannot be null
          * @param value - the value to insert
          * @return Object* - the previous value for the given key if exists, else nullptr
          */
