@@ -153,16 +153,37 @@ class Map: public Object {
  */
 class OSMap : public Map {
     public:
+
+        /**
+         * @brief - Get the value for the key.
+         * If the key does not exist, return a nullptr.
+         * 
+         * @param key - the key to return the value for.
+         * @return String* - the value that corresponds to key
+         */
+        virtual String* get(Object* key) {
+
+        }
+        
         /**
          * @brief - Put the given key-value pair in this map.
-         * Validate that the value is of type String.
          * 
          * @param key - the key to insert
          * @param value - the value to insert
-         * @return Object* - the previous value for the given key if exists, else nullptr
+         * @return String* - the previous value for the given key if exists, else nullptr
          */
-        virtual Object* put(Object* key, Object* value) {
-                
+        virtual String* put(Object* key, String* value) {
+            
+        }
+
+        /**
+         * @brief - Remove the key-value pair from this map.
+         * 
+         * @param key - the key to remove
+         * @return String* - the value of the key that was removed if exists, else nullptr
+         */
+        virtual String* remove(Object* key) {
+
         }
 };
 
@@ -172,16 +193,48 @@ class OSMap : public Map {
  */
 class SOMap : public Map {
     public:
+
+        /**
+         * @brief - Does this map contain key?
+         * 
+         * @param key - the key to search for
+         * @return true - if the key exists in this map
+         * @return false - if the key does not exist in this map
+         */
+        bool containsKey(String* key) {
+
+        }
+
+        /**
+         * @brief - Get the value for the key.
+         * If the key does not exist, return a nullptr.
+         * 
+         * @param key - the key to return the value for.
+         * @return Object* - the value that corresponds to key
+         */
+        virtual Object* get(String* key) {
+
+        }
+        
         /**
          * @brief - Put the given key-value pair in this map.
-         * Validate that the key is of type String.
          * 
          * @param key - the key to insert
          * @param value - the value to insert
          * @return Object* - the previous value for the given key if exists, else nullptr
          */
-        virtual Object* put(Object* key, Object* value) {
-                
+        virtual Object* put(String* key, Object* value) {
+            
+        }
+
+        /**
+         * @brief - Remove the key-value pair from this map.
+         * 
+         * @param key - the key to remove
+         * @return Object* - the value of the key that was removed if exists, else nullptr
+         */
+        virtual Object* remove(String* key) {
+
         }
 };
 
@@ -191,15 +244,47 @@ class SOMap : public Map {
  */
 class SSMap : public SOMap {
     public:
+
+        /**
+         * @brief - Does this map contain value?
+         * 
+         * @param value - the value to search for
+         * @return true - if the value exists in this map
+         * @return false - if the value does not exist in this map
+         */
+        virtual bool containsValue(String* value) {
+
+        }
+
+        /**
+         * @brief - Get the value for the key.
+         * If the key does not exist, return a nullptr.
+         * 
+         * @param key - the key to return the value for.
+         * @return Object* - the value that corresponds to key
+         */
+        virtual String* get(String* key) {
+
+        }
+        
         /**
          * @brief - Put the given key-value pair in this map.
-         * Validate that both the key and the value are of type String.
          * 
          * @param key - the key to insert
          * @param value - the value to insert
          * @return Object* - the previous value for the given key if exists, else nullptr
          */
-        virtual Object* put(Object* key, Object* value) {
+        virtual String* put(String* key, String* value) {
             
+        }
+
+        /**
+         * @brief - Remove the key-value pair from this map.
+         * 
+         * @param key - the key to remove
+         * @return Object* - the value of the key that was removed if exists, else nullptr
+         */
+        virtual String* remove(String* key) {
+
         }
 };
