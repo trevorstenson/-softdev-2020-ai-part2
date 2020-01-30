@@ -5,11 +5,6 @@
 #include "string.h"
 #include "array.h"
 
-int main() {
-    testBasicSOMap();
-    testBasicSSMap();
-}
-
 void FAIL() { exit(1); }
 void t_true(bool p) { if (!p) FAIL(); }
 void t_false(bool p) { if (p) FAIL(); }
@@ -37,23 +32,25 @@ void testBasicSOMap () {
     t_true(a->equals(map->get(aKey)));
     t_true(b->equals(map->get(bKey)));
     t_true(a->equals(map->remove(aKey)));
-    t_true(map->size == 1);
-    t_true(a->equals(map->remove(aKey)));
-    t_true(map->size == 0);
+    t_true(map->size() == 1);
+    t_true(b->equals(map->remove(bKey)));
+    t_true(map->size() == 0);
     t_true(map->isEmpty());
     map->put(aKey, a);
     map->put(bKey, b);
-    t_true(map->size == 2);
+    t_true(map->size() == 2);
     Object* newA = new Object();
     t_true(map->get(aKey)->equals(a));
     map->put(aKey, newA);
-    t_true(map->size == 2);
+    t_true(map->size() == 2);
     t_true(map->get(aKey)->equals(newA));
     SOMap* map2 = new SOMap();
     Object* c = new Object();
     Object* d = new Object();
     String* cKey = new String("c");
     String* dKey = new String("d");
+    map2->put(cKey, c);
+    map2->put(dKey, d);
     t_false(map->equals(map2));
     map->putAll(map2);
     t_true(map->size() == 4);
@@ -98,23 +95,25 @@ void testBasicSSMap () {
     t_true(a->equals(map->get(aKey)));
     t_true(b->equals(map->get(bKey)));
     t_true(a->equals(map->remove(aKey)));
-    t_true(map->size == 1);
-    t_true(a->equals(map->remove(aKey)));
-    t_true(map->size == 0);
+    t_true(map->size() == 1);
+    t_true(b->equals(map->remove(bKey)));
+    t_true(map->size() == 0);
     t_true(map->isEmpty());
     map->put(aKey, a);
     map->put(bKey, b);
-    t_true(map->size == 2);
+    t_true(map->size() == 2);
     String* newA = new String("newAValue");
     t_true(map->get(aKey)->equals(a));
     map->put(aKey, newA);
-    t_true(map->size == 2);
+    t_true(map->size() == 2);
     t_true(map->get(aKey)->equals(newA));
     SSMap* map2 = new SSMap();
     String* c = new String("cValue");
     String* d = new String("dValue");
     String* cKey = new String("c");
     String* dKey = new String("d");
+    map2->put(cKey, c);
+    map2->put(dKey, d);
     t_false(map->equals(map2));
     map->putAll(map2);
     t_true(map->size() == 4);
@@ -138,4 +137,9 @@ void testBasicSSMap () {
 
 void testErrors() {
     
+}
+
+int main() {
+    testBasicSOMap();
+    testBasicSSMap();
 }
