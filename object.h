@@ -1,47 +1,27 @@
+//lang::CwC
 #pragma once
-#include <iostream>
-#include <stdlib.h>
-#include <string.h>
+
+#include <cstdlib>
 
 /**
- * @brief Object class implementation
- * 
- */
+ * A class that represents the top of the object hierarchy.
+ * author: chasebish */
 class Object {
+public:
+  /** CONSTRUCTORS & DESTRUCTORS **/
 
-    /**
-     * @brief Object class
-     * 
-     */
-    public:
+  /* Default Object constructor */
+  Object();
 
-        /**
-         * @brief Construct a new Object object
-         * 
-         */
-        Object(){}
+  /* Default Object destructor, to be overriden by subclasses */
+  virtual ~Object();
 
-        ~Object() {}
-        
-        /**
-         * @brief check if this object is equal to other by checking if have the same memory address
-         * 
-         * @param other - the other object
-         * @return true - if they're equal
-         * @return false - if they're not equal 
-         */
-        virtual bool equals(Object* other) {
-            
-        }
 
-        /**
-         * @brief - get the hash of this object - returns the memory address of this object casted to a size_t
-         * 
-         * @return size_t 
-         */
-        virtual size_t hash() {
-            
-        }
+  /** VIRTUAL METHODS **/
+
+  /* Returns whether two objects are equal, to be overriden by subclasses */
+  virtual bool equals(Object* const obj);
+
+  /* Returns an object's hash value. Identical objects should have identical hashes */
+  virtual size_t hash();
 };
-    
-

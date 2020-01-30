@@ -3,10 +3,11 @@
 #include <stdlib.h>
 #include "object.h"
 #include "string.h"
-#include "list.h"
+#include "array.h"
 
 int main() {
-
+    testBasicSOMap();
+    testBasicSSMap();
 }
 
 void FAIL() { exit(1); }
@@ -58,13 +59,13 @@ void testBasicSOMap () {
     t_true(map->size() == 4);
     map2->putAll(map);
     t_true(map->equals(map2));
-    StrList* keys = dynamic_cast<StrList*>(map->keySet());
+    Array* keys = map->keySet();
     t_true(keys->size() == 4);
     t_true(keys->index_of(aKey) < keys->size());
     t_true(keys->index_of(bKey) < keys->size());
     t_true(keys->index_of(cKey) < keys->size());
     t_true(keys->index_of(dKey) < keys->size());
-    List* values = dynamic_cast<List*>(map->values());
+    Array* values = map->values();
     t_true(values->size() == 4);
     t_true(values->index_of(a) < values->size());
     t_true(values->index_of(b) < values->size());
@@ -119,13 +120,13 @@ void testBasicSSMap () {
     t_true(map->size() == 4);
     map2->putAll(map);
     t_true(map->equals(map2));
-    StrList* keys = dynamic_cast<StrList*>(map->keySet());
+    Array* keys = map->keySet();
     t_true(keys->size() == 4);
     t_true(keys->index_of(aKey) < keys->size());
     t_true(keys->index_of(bKey) < keys->size());
     t_true(keys->index_of(cKey) < keys->size());
     t_true(keys->index_of(dKey) < keys->size());
-    StrList* values = dynamic_cast<StrList*>(map->values());
+    Array* values = map->values();
     t_true(values->size() == 4);
     t_true(values->index_of(a) < values->size());
     t_true(values->index_of(b) < values->size());

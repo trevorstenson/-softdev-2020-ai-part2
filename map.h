@@ -1,6 +1,6 @@
 #pragma once
 #include "object.h"
-#include "list.h"
+#include "array.h"
 
 /**
  * Map - data structure that is to be used for our project which maps an Object to an Object
@@ -110,18 +110,18 @@ class Map: public Object {
         /**
          * @brief - Get a list of the keys present in this map.
          * 
-         * @return List* - the list of keys present in this map.
+         * @return Array* - the list of keys present in this map.
          */
-        virtual List* keySet() {
+        virtual Array* keySet() {
 
         }
 
         /**
          * @brief - Get a list of the values present in this map.
          * 
-         * @return List* - the list of values present in this map.
+         * @return Array* - the list of values present in this map.
          */
-        virtual List* values() {
+        virtual Array* values() {
 
         }
 
@@ -147,6 +147,25 @@ class Map: public Object {
 };
 
 /**
+ * @brief OSMap - Map from Object to String
+ * 
+ */
+class OSMap : public Map {
+    public:
+        /**
+         * @brief - Put the given key-value pair in this map.
+         * Validate that the value is of type String.
+         * 
+         * @param key - the key to insert
+         * @param value - the value to insert
+         * @return Object* - the previous value for the given key
+         */
+        virtual Object* put(Object* key, Object* value) {
+                
+        }
+};
+
+/**
  * @brief SOMap - Map from String to Object
  * 
  */
@@ -162,15 +181,6 @@ class SOMap : public Map {
          */
         virtual Object* put(Object* key, Object* value) {
                 
-        }
-
-        /**
-         * @brief - Get a list of the keys present in this map.
-         * 
-         * @return List* - the list of keys present in this map (should be an StrList)
-         */
-        virtual List* keySet() {
-
         }
 };
 
@@ -190,14 +200,5 @@ class SSMap : public SOMap {
          */
         virtual Object* put(Object* key, Object* value) {
             
-        }
-
-        /**
-         * @brief - Get a list of the values present in this map.
-         * 
-         * @return List* - the list of values present in this map (should be an StrList)
-         */
-        virtual List* values() {
-
         }
 };
