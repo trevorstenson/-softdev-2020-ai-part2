@@ -64,7 +64,7 @@ void testBasicSOMap () {
     t_true(keys->index_of(dKey) < keys->size());
     Array* values = map->values();
     t_true(values->size() == 4);
-    t_true(values->index_of(a) < values->size());
+    t_true(values->index_of(newA) < values->size());
     t_true(values->index_of(b) < values->size());
     t_true(values->index_of(c) < values->size());
     t_true(values->index_of(d) < values->size());
@@ -127,7 +127,7 @@ void testBasicSSMap () {
     t_true(keys->index_of(dKey) < keys->size());
     Array* values = map->values();
     t_true(values->size() == 4);
-    t_true(values->index_of(a) < values->size());
+    t_true(values->index_of(newA) < values->size());
     t_true(values->index_of(b) < values->size());
     t_true(values->index_of(c) < values->size());
     t_true(values->index_of(d) < values->size());
