@@ -9,6 +9,11 @@ void FAIL() { exit(1); }
 void t_true(bool p) { if (!p) FAIL(); }
 void t_false(bool p) { if (p) FAIL(); }
 
+// If a test succeeds, print OK.
+void OK(const char* m) {
+  fprintf(stderr, "OK: %s\n", m);
+}
+
 void testBasicSOMap () {
     SOMap* map = new SOMap();
     t_true(map->isEmpty());
@@ -80,7 +85,7 @@ void testBasicSOMap () {
     delete d;
     delete cKey;
     delete dKey;
-    
+    OK("1");
 }
 
 void testBasicSSMap () {
@@ -154,6 +159,7 @@ void testBasicSSMap () {
     delete d;
     delete cKey;
     delete dKey;
+    OK("2");
 }
 
 void testErrors() {
