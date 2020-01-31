@@ -185,6 +185,17 @@ class OSMap : public Map {
         virtual String* remove(Object* key) {
 
         }
+    
+        /**
+         * @brief - Does this map contain value?
+         * 
+         * @param value - the value to search for
+         * @return true - if the value exists in this map
+         * @return false - if the value does not exist in this map
+         */
+        virtual bool containsValue(String* value) {
+
+        }
 };
 
 /**
