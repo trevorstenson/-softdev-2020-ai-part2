@@ -163,4 +163,5 @@ void testErrors() {
 int main() {
     testBasicSOMap();
     testBasicSSMap();
+    return 0;a
 }
