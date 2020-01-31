@@ -68,6 +68,19 @@ void testBasicSOMap () {
     t_true(values != nullptr);
     map->clear();
     t_true(map->isEmpty());
+
+    delete map;
+    delete a;
+    delete b;
+    delete aKey;
+    delete bKey;
+    delete newA;
+    delete map2;
+    delete c;
+    delete d;
+    delete cKey;
+    delete dKey;
+    
 }
 
 void testBasicSSMap () {
@@ -129,6 +142,18 @@ void testBasicSSMap () {
     t_true(values != nullptr);
     map->clear();
     t_true(map->isEmpty());
+
+    delete map;
+    delete a;
+    delete b;
+    delete aKey;
+    delete bKey;
+    delete newA;
+    delete map2;
+    delete c;
+    delete d;
+    delete cKey;
+    delete dKey;
 }
 
 void testErrors() {
